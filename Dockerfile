@@ -6,6 +6,7 @@ COPY package.json ./
 COPY pnpm-lock.yaml ./
 RUN corepack enable --install-directory=/usr/bin \
     && corepack prepare --activate pnpm@latest
+RUN npm install -g pnpm
 RUN pnpm install --frozen-lockfile
 COPY . .
 RUN pnpm run build
