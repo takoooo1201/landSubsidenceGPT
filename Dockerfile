@@ -11,7 +11,7 @@ RUN pnpm install --force
 COPY . .
 RUN pnpm run build
 RUN rm -rf node_modules
-RUN pnpm install --frozen-lockfile --prod
+RUN pnpm install --force --prod
 
 # runtime image
 FROM node:18-alpine
