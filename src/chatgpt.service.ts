@@ -26,7 +26,7 @@ export class ChatGPTService implements OnModuleInit {
     }
 
     const openaiConfig: OpenAiConfig = this.configService.get('openai') || {};
-    const { systemMessage, maxTokens, model = 'gpt-3.5-turbo', errorMapping } = openaiConfig;
+    const { systemMessage, maxTokens, model = 'ft:gpt-3.5-turbo-1106:personal:relationmodel1:9qMVuCzt', errorMapping } = openaiConfig;
     this.errorMapping = errorMapping || [];
 
     this.api = new ChatGPTAPI({
