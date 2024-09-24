@@ -33,7 +33,7 @@ export class ChatGPTService implements OnModuleInit {
       apiKey: process.env.OPENAI_API_KEY,
       fetch: this.proxyFetch,
       systemMessage,
-      maxModelTokens: 3000,
+      maxModelTokens: maxTokens,
       completionParams: {
         model,
       },
