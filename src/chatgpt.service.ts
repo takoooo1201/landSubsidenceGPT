@@ -26,14 +26,14 @@ export class ChatGPTService implements OnModuleInit {
     }
 
     const openaiConfig: OpenAiConfig = this.configService.get('openai') || {};
-    const { systemMessage, maxTokens, model = 'ft:gpt-3.5-turbo-1106:personal:relationmodel1:9qMVuCzt', errorMapping } = openaiConfig;
+    const { systemMessage, maxTokens, model = 'gpt-4o', errorMapping } = openaiConfig;
     this.errorMapping = errorMapping || [];
 
     this.api = new ChatGPTAPI({
       apiKey: process.env.OPENAI_API_KEY,
       fetch: this.proxyFetch,
       systemMessage,
-      maxModelTokens: maxTokens,
+      maxModelTokens: 3000,
       completionParams: {
         model,
       },
